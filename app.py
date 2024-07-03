@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("Echo Bot 0.1.0bu")
+st.title("Echo Bot 0.0")
 
 # Initialize chat history
 if "messages" not in st.session_state:

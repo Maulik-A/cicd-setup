@@ -1,8 +1,10 @@
-name: Docker Image CI
+name: CI pipeline
 
 on:
-  push:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: [ "CD pipeline" ]
+    types:
+    - completed
 
 
 jobs:
@@ -13,12 +15,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Login Dockerhub
-      env:
-        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: Build the Docker image
-      run: docker build . -t maulika/cicd-pipeline
-    - name: Push to Dockerhub
-      run: docker push maulika/cicd-pipeline:latest
+    - name: Pull docker image
+      run: sudo docker pull maulika/cicd-pipeline:latest
+    - name: Delete old container
+      run: sudo docker -rm -f cicd-pipeline-container || true
+    - name: Run docker container
+      run: docker run -d -p 8501:8501 --name cicd-pipeline-container maulika/cicd-pipeline

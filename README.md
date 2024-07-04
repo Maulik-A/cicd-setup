@@ -20,7 +20,7 @@ Here's a breakdown of the awesomeness you'll find:
 
 1. **Code Your App:** Create your Python application (you already know this part, right?).
 2. **Dockerize:** Write your `Dockerfile` to build the Docker image.
-3. **Configure Github Actions:** Set up the `ci.yml` and `cid.yml` file to automate the workflow.
+3. **Configure Github Actions:** Set up the `ci.yml` and `cd.yml` file to automate the workflow.
 4. **EC2 Setup:** Make sure you have an EC2 instance ready and configured for deployment.
 5. **Push to Github:** Commit your changes and push them to Github.
 6. **Watch the Magic:** Github Actions will take over and deploy your app to the EC2 instance!

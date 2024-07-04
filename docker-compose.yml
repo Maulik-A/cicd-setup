@@ -1,0 +1,7 @@
+services:
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8501:8501"
+    command: streamlit run app.py

@@ -1,6 +1,26 @@
 import streamlit as st
 
-st.title("Project X Bot 0.1 cicd")
+
+logo_url = "media/Dax_11zon.png"
+st.sidebar.image(logo_url)
+
+st.title("Data Analytics :blue[X] AI")
+st.subheader("Your personal data analyst powerd by AI :sunglasses:")
+
+# setting up side bar
+with st.sidebar:
+
+    llm = st.radio("Select LLM model:",
+             options=["Gemini", "GPT 4"])
+    
+    
+    llm_api_key =  st.text_input(
+        f"{llm} API Key:", 
+        key = "API_key",
+        type="password"
+    )
+    
+    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
 
 # Initialize chat history
 if "messages" not in st.session_state:

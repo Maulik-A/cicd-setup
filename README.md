@@ -31,4 +31,3 @@ Here's a breakdown of the awesomeness you'll find:
 * Have fun and enjoy the power of automation!
 
 **Happy coding and deploying!**
-:))

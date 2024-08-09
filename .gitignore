@@ -1,0 +1,6 @@
+*.DS_Store
+app/__pycache__
+app/db-setup.py
+app/cred.py
+app/utils.py
+app/test.ipynb
